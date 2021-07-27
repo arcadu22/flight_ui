@@ -1,0 +1,41 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="home">{{"Vuelos" | translate}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="vuelos">{{"Vuelos" | translate}}</a>
+  </li>
+
+
+<table class="table">
+
+  
+
+  <table  class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>{{"Tipo de Avion" | translate}} </th>
+      <th>{{"Capacidad" | translate}}</th>
+      <th>{{"Matricula" | translate}}</th>
+      <th>{{"Empresa" | translate}}</th>
+  
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of vuelo">
+      <td>{{item.idAvion}}</td>
+      <td>{{item.topoAvion}}</td>
+      <td>{{item.capacidad}}</td>
+      <td>{{item.matricula}}</td>
+      <td>{{item.empresa}}</td>
+    
+      <td>
+        <button type="button" class="btn btn-success" >{{"Pasajeros" | translate}}</button>
+      
+      </td>
+    </tr>
+
+  </tbody>
+
+ </table>

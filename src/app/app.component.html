@@ -1,41 +1,16 @@
-<div class="formularioRegistro">
-<h2>Formulario Persona</h2>
-<form [formGroup]="clienteForm" (ngSubmit)="guardar">
-  <div class="form-group">
-    <label >Nombre</label>
-    <input type="text" formControlName="nombre" class="form-control">
-  </div>
 
-  <div class="form-group">
-    <label >Apellido</label>
-    <input type="text" formControlName="apellido" class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label >Edad</label>
-    <input type="number" formControlName="edad" class="form-control" min="0">
-  </div>
-
-  <div class="form-group">
-    <label >Documento</label>
-    <input type="number" formControlName="documento" class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label >Correo</label>
-    <input type="text" formControlName="email" class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label >Telefono</label>
-    <input type="number" formControlName="telefono" class="form-control">
-  </div>
-
-  <button type="submit" class="btn btn-primary">Guardar</button>
-</form>
-</div>
-
-  
+ <label>
+    idioma
+    <select #langSelect (change)="changeLang(langSelect.value)">
+      <option *ngFor="let lang of langs" [value]="lang">
+        {{ lang }}
+      </option>
+    </select>
+  </label>
 
 
 <router-outlet></router-outlet>
+
+
+  
+

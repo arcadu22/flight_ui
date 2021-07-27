@@ -1,0 +1,96 @@
+
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="home">{{"Personas" | translate}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="vuelos">{{"Vuelos" | translate}}</a>
+  </li>
+ 
+</ul>
+
+ 
+
+<div class="formularioRegistro">
+
+  <h2>{{"Formulario Persona" | translate}}</h2>
+    
+  <form [formGroup]="clienteForm"  ngNativeValidate autocomplete="off" (ngSubmit)="guardar()" (ngSubmit)="actualizarCliente()">
+    <div class="form-group">
+      <label>{{"Nombre" | translate}}</label>
+      <input type="text" formControlName="nombre" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>{{"Apellido" | translate}}</label>
+      <input type="text" formControlName="apellido" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>{{"Edad" | translate}}</label>
+      <input type="number" formControlName="edad" ngModel name="edad" class="form-control" min="0">
+    </div>
+
+    <div class="form-group">
+      <label>{{"Documento" | translate}}</label>
+      <input type="number"  id="cedulas" formControlName="documento" class="form-control" [readonly]="isClicked" >
+    </div>
+
+    <div class="form-group">
+      <label>{{"Correo" | translate}}</label>
+      <input type="email" formControlName="email" class="form-control" >
+    </div>
+
+    <div class="form-group">
+      <label>{{"Telefono" | translate}}</label>
+      <input type="number" formControlName="telefono"  class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary" >{{"Guardar" | translate}}</button>
+  </form>
+
+</div>
+
+<div class="formularioRegistro">
+  
+  <h2>{{ "Personas Registradas" | translate }}</h2>
+  <input type="text" placeholder="Buscar"name="documento" class="form-control text"  #documento (keyup)="buscarDocumento(documento.value)">
+
+
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+      
+        <th>{{"Nombre" | translate}}</th>
+        <th>{{"Apellido" | translate}}</th>
+        <th>{{"Edad" | translate}}</th>
+        <th>{{"Documento" | translate}}</th>
+        <th>{{"Correo" | translate}}</th>
+        <th>{{"Telefono" | translate}}</th>
+        <th>{{"Opciones" | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cliente">
+        <td>{{item.idUsuario}}</td>
+        <td>{{item.nombre}}</td>
+        <td>{{item.apellido}}</td>
+        <td>{{item.edad}}</td>
+        <td>{{item.documento}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.telefono}}</td>
+        <td>
+          <button type="button" class="btn btn-success" (click)="editar(item)" >{{"Editar" | translate}}</button>
+          <button type="button" class="btn btn-danger" (click)="eliminarPorId(item)" >{{"Eliminar" | translate}}</button>
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+
+</div>
+<router-outlet></router-outlet>

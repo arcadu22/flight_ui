@@ -1,44 +1,25 @@
 import { Component , OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ClienteService } from './services/cliente/cliente.service';
-
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  implements OnInit{
-  
+export class AppComponent {
  
-  clienteForm: FormGroup;
-
-
-
+    langs: string[] =[];
 
   constructor(
-    public fb: FormBuilder,
-    public clienteService: ClienteService
+    private translate: TranslateService
   ){
-
-  }
-  ngOnInit(): void {
-   
-    this.clienteForm = this.fb.group({
-
-    //  idUsuario : ['', Validators.required],
-      nombre : ['', Validators.required],
-      apellido : ['', Validators.required],
-      edad : ['', Validators.required],
-      documento : ['', Validators.required],
-      email : ['', Validators.required],
-      telefono : ['', Validators.required]
-    })
-
+    this.translate.setDefaultLang('es');
+    this.translate.use('es');
+    this.translate.addLangs(['es','en']);
+    this.langs = this.translate.getLangs();
   }
 
-  guardar():void{
-
+  changeLang(lang: string){
+    this.translate.use(lang);
   }
-
 }

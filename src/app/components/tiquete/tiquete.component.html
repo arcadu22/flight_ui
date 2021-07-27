@@ -1,0 +1,50 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="vuelos">vuelos2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="home">home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="tiquete">tiquete</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+
+<div class="formularioRegistro">
+    <h2>Formulario tiquete</h2>
+    <form [formGroup]="tiqueteForm" >
+      <div class="form-group">
+        <label >Clase</label>
+        <input type="text" formControlName="clase" class="form-control">
+      </div>
+    
+      <div class="form-group">
+        <label >asiento</label>
+        <input type="text" formControlName="asiento" class="form-control">
+      </div>
+    
+      <div class="form-group">
+        <label >valor</label>
+        <input type="number" formControlName="valor" class="form-control" min="0">
+      </div>
+    
+      <div class="form-group">
+        <label >Hora</label>
+        <input type="number" formControlName="hora" class="form-control">
+      </div>
+    
+      <div class="form-group">
+        <label >Fecha</label>
+        <input type="text" formControlName="fecha" class="form-control">
+      </div>
+    
+    
+    
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    
+    
+    </div>

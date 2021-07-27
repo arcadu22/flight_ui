@@ -1,0 +1,24 @@
+{
+    "Tipo Avion": "type of plane",
+    "Guardar": "Save",
+    "Formulario Persona": "Person Form",
+    "Nombre": "Name",
+    "Apellido": "Last Name",
+    "Edad": "Age",
+    "Documento":"Document",
+    "Correo":"Mail",
+    "Telefono":"Phone",
+    "Personas Registradas": "Registered Persons ",
+    "Buscar": "Search",
+    "Opciones":"options ",
+    "Editar": "Edit",
+    "Eliminar": "Delete",
+    "Tipo de Avion": "Type Of Plane",
+    "Capacidad": "Capacity",
+    "Matricula": "Enrollment",
+    "Empresa": "Business",
+    "Pasajeros": "Passengers",
+    "Personas": "People",
+    "Vuelos": "flights "
+
+}
